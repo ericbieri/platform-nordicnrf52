@@ -1,8 +1,34 @@
 {
   "build": {
+    "arduino":{
+      "ldscript": "nrf52840_s140_v6.ld"
+    },
+    "core": "nRF5",
     "cpu": "cortex-m4",
+    "extra_flags": "-DARDUINO_NRF52840_FEATHER -DNRF52840_XXAA -DNRF52840_XXAA",
     "f_cpu": "64000000L",
-    "mcu": "nrf52840"
+    "mcu": "nrf52840",
+    "hwids": [
+      [
+        "0x239A",
+        "0x8029"
+      ]
+    ],
+    "usb_product": "Particle Argon",
+    "mcu": "nrf52840",
+    "variant": "particle_argon",
+    "bsp": {
+      "name": "adafruit"
+    },
+    "softdevice": {
+      "sd_flags": "-DS140",
+      "sd_name": "s140",
+      "sd_version": "6.1.1",
+      "sd_fwid": "0x00B6"
+    },
+    "bootloader": {
+      "settings_addr": "0xFF000"
+    }
   },
   "connectivity": [
     "bluetooth"
@@ -12,6 +38,7 @@
     "svd_path": "nrf52840.svd"
   },
   "frameworks": [
+    "arduino",
     "zephyr"
   ],
   "name": "Particle Argon",
@@ -25,6 +52,7 @@
       "jlink",
       "nrfjprog",
       "nrfutil",
+      "stlink",
       "cmsis-dap",
       "blackmagic"
     ]
